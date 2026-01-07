@@ -9,7 +9,9 @@ class PersonTest {
     @Test
     public void personModelTest() {
         var person = new Person();
-        assertEquals("taro", person.name);
+        assertEquals("Mr.Taro", person.name);
+        assertNotEquals("taro", person.name);
+        assertNotEquals("Taro", person.name);
         assertEquals(15, person.age);
 
         person.name = "jiro";
