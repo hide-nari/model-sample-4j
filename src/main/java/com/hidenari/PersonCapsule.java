@@ -5,7 +5,9 @@ public class PersonCapsule {
     private int age;
 
     public PersonCapsule(String name, int age) {
-        this.name = "Mr." + name;
+        this.name = "Mr."
+                + name.substring(0, 1).toUpperCase()
+                + name.substring(1).toLowerCase();
         this.age = age;
     }
 
@@ -19,7 +21,9 @@ public class PersonCapsule {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = "Mr."
+                + name.substring(0, 1).toUpperCase()
+                + name.substring(1).toLowerCase();
     }
 
     public int getAge() {
