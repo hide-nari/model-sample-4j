@@ -8,7 +8,7 @@ public record PersonRecord(String name, int age) {
         this.age = age;
     }
 
-    PersonRecord() {
+    public PersonRecord() {
         this("taro", 15);
     }
 }
