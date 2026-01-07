@@ -1,7 +1,5 @@
 package com.hidenari;
 
-import java.util.Objects;
-
 record PersonRecord(String name, int age) {
 }
 
