@@ -8,18 +8,36 @@ class PersonTest {
 
     @Test
     public void personModelTest() {
-        var person = new Person();
-        assertEquals("Mr.Taro", person.name);
-        assertNotEquals("taro", person.name);
-        assertNotEquals("Taro", person.name);
-        assertEquals(15, person.age);
+        var personOne = new Person();
+        assertEquals("Mr.Taro", personOne.name);
+        assertNotEquals("taro", personOne.name);
+        assertNotEquals("Taro", personOne.name);
+        assertEquals(15, personOne.age);
 
-        person.name = "jiro";
-        assertEquals("jiro", person.name);
-        assertNotEquals("taro", person.name);
+        personOne.name = "jiro";
+        assertEquals("jiro", personOne.name);
+        assertNotEquals("taro", personOne.name);
 
-        person.age = 20;
-        assertEquals(20, person.age);
-        assertNotEquals(15, person.age);
+        personOne.age = 20;
+        assertEquals(20, personOne.age);
+        assertNotEquals(15, personOne.age);
+    }
+
+    @Test
+    public void personModelWithParameterTest() {
+        var personTwo = new Person("jiro", 20);
+        assertEquals("Mr.Jiro", personTwo.name);
+        assertNotEquals("jiro", personTwo.name);
+        assertNotEquals("Jiro", personTwo.name);
+        assertEquals(20, personTwo.age);
+        assertNotEquals(15, personTwo.age);
+
+        personTwo.name = "saburo";
+        assertEquals("saburo", personTwo.name);
+        assertNotEquals("jiro", personTwo.name);
+
+        personTwo.age = 25;
+        assertEquals(25, personTwo.age);
+        assertNotEquals(20, personTwo.age);
     }
 }
