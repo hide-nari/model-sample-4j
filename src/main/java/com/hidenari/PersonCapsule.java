@@ -1,36 +1,36 @@
 package com.hidenari;
 
-public class PersonCapsule {
+class PersonCapsule {
     private String name;
     private int age;
 
-    public PersonCapsule(String name, int age) {
+    PersonCapsule(String name, int age) {
         this.name = "Mr."
                 + name.substring(0, 1).toUpperCase()
                 + name.substring(1).toLowerCase();
         this.age = age;
     }
 
-    public PersonCapsule() {
+    PersonCapsule() {
         this("taro", 15);
     }
 
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    void setName(String name) {
         this.name = "Mr."
                 + name.substring(0, 1).toUpperCase()
                 + name.substring(1).toLowerCase();
     }
 
-    public int getAge() {
+    int getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    void setAge(int age) {
         this.age = age;
     }
 }

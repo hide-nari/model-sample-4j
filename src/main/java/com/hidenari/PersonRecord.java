@@ -2,7 +2,7 @@ package com.hidenari;
 
 import java.util.Objects;
 
-public record PersonRecord(String name, int age) {
+record PersonRecord(String name, int age) {
 }
 
 //public final class PersonRecord {
