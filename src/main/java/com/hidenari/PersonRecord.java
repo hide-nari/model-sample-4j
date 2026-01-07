@@ -7,6 +7,10 @@ public record PersonRecord(String name, int age) {
                 + name.substring(1).toLowerCase();
         this.age = age;
     }
+
+    PersonRecord() {
+        this("taro", 15);
+    }
 }
 
 //public final class PersonRecord {
