@@ -1,26 +1,25 @@
 Person Model Sample on java version 14 or later.
 
-## about this package
+## About this package
+Person model three programming patterns.
+
 Person Model
-- public name
-  -  added [Mr.] and first char upper case on constructor
-- public age
+- public String name
+- public int age
 
 Person Capsule Model
-- private name
-    -  added [Mr.] and first char upper case on constructor
-- private age
-- public getName()
-- public setName()
-- public getAge()
-- public setAge()
+- private String name
+- private int age
+- public String getName()
+- public void setName()
+- public int getAge()
+- public void setAge()
 
-Person Record Model
-- private name
-    -  added [Mr.] and first char upper case on constructor
-- private age
-- public name()
-- public age()
+Person Record Model (implicit)
+- private final String name
+- private final int age
+- public String name()
+- public int age()
 
 ## Update Rules
 
