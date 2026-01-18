@@ -8,10 +8,8 @@ public class PersonCapsule implements NameCapsuleInterface, AgeCapsuleInterface 
         this.name = "Mr."
                 + name.substring(0, 1).toUpperCase()
                 + name.substring(1).toLowerCase();
-        if (age < 15) {
-            throw new IllegalArgumentException("under 15");
-        }
         this.age = age;
+        this.overFifteen(age);
     }
 
     public PersonCapsule() {
