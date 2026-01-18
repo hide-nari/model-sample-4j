@@ -1,6 +1,6 @@
 package com.hidenari;
 
-public record PersonRecord(String name, int age) implements NameInterface {
+public record PersonRecord(String name, int age) implements NameInterface, AgeInterface {
     public PersonRecord(String name, int age) {
         this.name = "Mr."
                 + name.substring(0, 1).toUpperCase()
@@ -9,6 +9,6 @@ public record PersonRecord(String name, int age) implements NameInterface {
     }
 
     public PersonRecord() {
-        this(NameInterface.INIT_NAME, 15);
+        this(NameInterface.INIT_NAME, AgeInterface.INIT_AGE);
     }
 }
