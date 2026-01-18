@@ -6,7 +6,7 @@ public record PersonRecord(String name, int age) implements NameInterface, AgeIn
                 + name.substring(0, 1).toUpperCase()
                 + name.substring(1).toLowerCase();
         this.age = age;
-        this.overFifteen(age);
+        overFifteen(age);
     }
 
     public PersonRecord() {
