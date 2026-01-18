@@ -22,4 +22,12 @@ class PersonCapsuleTest {
         assertEquals(20, person.getAge());
         assertNotEquals(15, person.getAge());
     }
+
+    @Test
+    public void personModelValidateUnderFifteenTest() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            new PersonCapsule("taro", 14);
+        });
+        assertEquals("under 15", exception.getMessage());
+    }
 }

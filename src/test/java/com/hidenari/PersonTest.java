@@ -40,4 +40,12 @@ class PersonTest {
         assertEquals(25, personTwo.age);
         assertNotEquals(20, personTwo.age);
     }
+
+    @Test
+    public void personModelValidateUnderFifteenTest() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            new Person("taro", 14);
+        });
+        assertEquals("under 15", exception.getMessage());
+    }
 }
