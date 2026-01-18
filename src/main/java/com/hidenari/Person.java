@@ -1,6 +1,6 @@
 package com.hidenari;
 
-public class Person {
+public class Person implements NameInterface {
     public String name;
     public int age;
 
@@ -12,6 +12,6 @@ public class Person {
     }
 
     public Person() {
-        this("taro", 15);
+        this(NameInterface.INIT_NAME, 15);
     }
 }

@@ -16,7 +16,7 @@ class PersonCapsuleTest {
 
         person.setName("jiro");
         assertEquals("Mr.Jiro", person.getName());
-        assertNotEquals("jiro", person.getAge());
+        assertNotEquals("jiro", person.getName());
 
         person.setAge(20);
         assertEquals(20, person.getAge());

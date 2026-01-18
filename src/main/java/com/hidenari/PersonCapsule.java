@@ -1,6 +1,6 @@
 package com.hidenari;
 
-public class PersonCapsule {
+public class PersonCapsule implements NameCapsuleInterface {
     private String name;
     private int age;
 
@@ -12,14 +12,15 @@ public class PersonCapsule {
     }
 
     public PersonCapsule() {
-        this("taro", 15);
+        this(NameCapsuleInterface.INIT_NAME, 15);
     }
 
-
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public void setName(String name) {
         this.name = "Mr."
                 + name.substring(0, 1).toUpperCase()
