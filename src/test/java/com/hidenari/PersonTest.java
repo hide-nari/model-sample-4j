@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class PersonTest {
 
     @Test
-    public void personModelTest() {
+    public void personModelTest() throws NoSuchFieldException {
         var personOne = new Person();
         assertEquals("Mr.Taro", personOne.name);
         assertNotEquals("taro", personOne.name);
@@ -24,7 +24,7 @@ class PersonTest {
     }
 
     @Test
-    public void personModelWithParameterTest() {
+    public void personModelWithParameterTest() throws NoSuchFieldException {
         var personTwo = new Person("jiro", 20);
         assertEquals("Mr.Jiro", personTwo.name);
         assertNotEquals("jiro", personTwo.name);
