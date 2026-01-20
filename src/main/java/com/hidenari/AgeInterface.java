@@ -1,6 +1,6 @@
 package com.hidenari;
 
-public interface AgeInterface {
+interface AgeInterface {
     int INIT_AGE = 15;
 
     default void overFifteen(int age) {

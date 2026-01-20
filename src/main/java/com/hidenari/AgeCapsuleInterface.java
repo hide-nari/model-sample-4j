@@ -1,6 +1,6 @@
 package com.hidenari;
 
-public interface AgeCapsuleInterface {
+interface AgeCapsuleInterface {
     int INIT_AGE = 15;
 
     int getAge();

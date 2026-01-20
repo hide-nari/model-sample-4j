@@ -1,5 +1,5 @@
 package com.hidenari;
 
-public interface NameInterface {
+interface NameInterface {
     String INIT_NAME = "taro";
 }

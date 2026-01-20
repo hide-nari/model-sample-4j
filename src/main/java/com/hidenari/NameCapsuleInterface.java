@@ -1,6 +1,6 @@
 package com.hidenari;
 
-public interface NameCapsuleInterface {
+interface NameCapsuleInterface {
     String INIT_NAME = "taro";
 
     String getName();
