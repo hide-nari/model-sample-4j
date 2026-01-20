@@ -47,4 +47,18 @@ class PersonTest {
                 IllegalArgumentException.class, () -> new Person("taro", 14));
         assertEquals("under 15", exception.getMessage());
     }
+
+    @Test
+    public void personModelValidateNameMinLengthOverTest() {
+        var exception = assertThrows(
+                IllegalArgumentException.class, () -> new Person("壱", 15));
+        assertEquals("name length is invalid", exception.getMessage());
+    }
+
+    @Test
+    public void personModelValidateNameMaxLengthOverTest() {
+        var exception = assertThrows(
+                IllegalArgumentException.class, () -> new Person("1234567890123456", 15));
+        assertEquals("name length is invalid", exception.getMessage());
+    }
 }

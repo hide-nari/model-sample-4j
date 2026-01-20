@@ -1,18 +1,20 @@
 package com.hidenari;
 
 public class PersonCapsule implements NameCapsuleInterface, AgeCapsuleInterface {
+    @ValidateName(minLength = 1, maxLength = 16)
     private String name;
     private int age;
 
-    public PersonCapsule(String name, int age) {
+    public PersonCapsule(String name, int age) throws NoSuchFieldException {
         this.name = "Mr."
                 + name.substring(0, 1).toUpperCase()
                 + name.substring(1).toLowerCase();
         this.age = age;
+        validateNameLength(name);
         overFifteen(age);
     }
 
-    public PersonCapsule() {
+    public PersonCapsule() throws NoSuchFieldException {
         this(NameCapsuleInterface.INIT_NAME, AgeCapsuleInterface.INIT_AGE);
     }
 
