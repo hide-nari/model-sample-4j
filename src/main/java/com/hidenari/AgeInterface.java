@@ -1,6 +1,6 @@
 package com.hidenari;
 
-interface AgeInterface {
+sealed interface AgeInterface permits Person, PersonRecord {
     int INIT_AGE = 15;
 
     default void overFifteen(int age) {

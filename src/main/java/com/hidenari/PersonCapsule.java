@@ -1,6 +1,6 @@
 package com.hidenari;
 
-public class PersonCapsule implements NameCapsuleInterface, AgeCapsuleInterface {
+public final class PersonCapsule implements NameCapsuleInterface, AgeCapsuleInterface {
     @ValidateNameLength(min = 1, max = 16)
     private String name;
     private int age;

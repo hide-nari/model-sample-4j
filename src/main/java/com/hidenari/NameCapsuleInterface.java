@@ -2,7 +2,7 @@ package com.hidenari;
 
 import java.lang.reflect.Field;
 
-interface NameCapsuleInterface {
+sealed interface NameCapsuleInterface permits PersonCapsule {
     String INIT_NAME = "taro";
 
     String getName();
