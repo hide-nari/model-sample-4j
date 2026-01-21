@@ -1,6 +1,6 @@
 package com.hidenari;
 
-import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 sealed interface NameCapsuleInterface permits PersonCapsule {
     String INIT_NAME = "taro";
@@ -11,12 +11,12 @@ sealed interface NameCapsuleInterface permits PersonCapsule {
 
     default void validateNameLength(String name) {
         try {
-            Field nameField = Person.class.getField("name");
-            ValidateNameLength param = nameField.getAnnotationsByType(ValidateNameLength.class)[0];
+            Method nameSetMethod = PersonCapsule.class.getMethod("getName");
+            ValidateNameLength param = nameSetMethod.getAnnotationsByType(ValidateNameLength.class)[0];
             if (name.length() <= param.min() || name.length() >= param.max()) {
                 throw new IllegalArgumentException("name length is invalid");
             }
-        } catch (NoSuchFieldException e) {
+        } catch (NoSuchMethodException e) {
             throw new RuntimeException(e);
         }
     }
