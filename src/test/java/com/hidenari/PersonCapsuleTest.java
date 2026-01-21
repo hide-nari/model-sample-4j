@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PersonCapsuleTest {
-
     @Test
     public void personCapsuleModelTest() throws NoSuchFieldException {
         var person = new PersonCapsule();
