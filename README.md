@@ -3,11 +3,11 @@ Person Model Sample on java version 14 or later.
 ## About this package
 Person model three programming patterns.
 
-Person Model
+Person Model with sealed IF
 - public String name
 - public int age
 
-Person Capsule Model
+Person Capsule Model with sealed IF
 - private String name
 - private int age
 - public String getName()
@@ -15,14 +15,17 @@ Person Capsule Model
 - public int getAge()
 - public void setAge()
 
-Person Record Model (implicit)
+Person Record Model (implicit) with sealed IF
 - private final String name
 - private final int age
 - public String name()
 - public int age()
 
-## Update Rules
+## Bind Checker
+- name length is 2 to 15 characters.
+- age is over 15.
 
+## Update Rules
 When updating, execute the following command.
 
 ```
