@@ -8,8 +8,8 @@ import java.lang.annotation.Target;
 
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-@interface ValidateName {
-    int minLength();
+@interface ValidateNameLength {
+    int min();
 
-    int maxLength();
+    int max();
 }

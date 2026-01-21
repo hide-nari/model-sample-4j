@@ -11,8 +11,8 @@ interface NameCapsuleInterface {
 
     default void validateNameLength(String name) throws NoSuchFieldException {
         Field nameField = Person.class.getField("name");
-        ValidateName param = nameField.getAnnotationsByType(ValidateName.class)[0];
-        if (name.length() <= param.minLength() || name.length() >= param.maxLength()) {
+        ValidateNameLength param = nameField.getAnnotationsByType(ValidateNameLength.class)[0];
+        if (name.length() <= param.min() || name.length() >= param.max()) {
             throw new IllegalArgumentException("name length is invalid");
         }
     }

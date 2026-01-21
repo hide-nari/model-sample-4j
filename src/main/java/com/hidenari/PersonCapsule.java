@@ -1,7 +1,7 @@
 package com.hidenari;
 
 public class PersonCapsule implements NameCapsuleInterface, AgeCapsuleInterface {
-    @ValidateName(minLength = 1, maxLength = 16)
+    @ValidateNameLength(min = 1, max = 16)
     private String name;
     private int age;
 
