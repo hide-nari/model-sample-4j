@@ -1,7 +1,5 @@
 package com.hidenari;
 
-import java.lang.reflect.Field;
-
 public record PersonRecord(
         @ValidateNameLength(min = 1, max = 16)
         String name,
