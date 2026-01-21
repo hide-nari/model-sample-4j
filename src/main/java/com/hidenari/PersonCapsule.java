@@ -5,7 +5,7 @@ public final class PersonCapsule implements NameCapsuleInterface, AgeCapsuleInte
     private String name;
     private int age;
 
-    public PersonCapsule(String name, int age) throws NoSuchFieldException {
+    public PersonCapsule(String name, int age) {
         this.name = "Mr."
                 + name.substring(0, 1).toUpperCase()
                 + name.substring(1).toLowerCase();
@@ -14,7 +14,7 @@ public final class PersonCapsule implements NameCapsuleInterface, AgeCapsuleInte
         overFifteen(age);
     }
 
-    public PersonCapsule() throws NoSuchFieldException {
+    public PersonCapsule() {
         this(NameCapsuleInterface.INIT_NAME, AgeCapsuleInterface.INIT_AGE);
     }
 

@@ -11,11 +11,7 @@ public record PersonRecord(
                 + name.substring(0, 1).toUpperCase()
                 + name.substring(1).toLowerCase();
         this.age = age;
-        try {
-            validateNameLength(name);
-        } catch (NoSuchFieldException e) {
-            throw new RuntimeException(e);
-        }
+        validateNameLength(name);
         overFifteen(age);
     }
 

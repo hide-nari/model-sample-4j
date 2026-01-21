@@ -9,8 +9,13 @@ sealed interface NameCapsuleInterface permits PersonCapsule {
 
     void setName(String name);
 
-    default void validateNameLength(String name) throws NoSuchFieldException {
-        Field nameField = Person.class.getField("name");
+    default void validateNameLength(String name) {
+        Field nameField = null;
+        try {
+            nameField = Person.class.getField("name");
+        } catch (NoSuchFieldException e) {
+            throw new RuntimeException(e);
+        }
         ValidateNameLength param = nameField.getAnnotationsByType(ValidateNameLength.class)[0];
         if (name.length() <= param.min() || name.length() >= param.max()) {
             throw new IllegalArgumentException("name length is invalid");

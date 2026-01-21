@@ -5,7 +5,7 @@ public final class Person implements NameInterface, AgeInterface {
     public String name;
     public int age;
 
-    public Person(String name, int age) throws NoSuchFieldException {
+    public Person(String name, int age) {
         this.name = "Mr."
                 + name.substring(0, 1).toUpperCase()
                 + name.substring(1).toLowerCase();
@@ -14,7 +14,7 @@ public final class Person implements NameInterface, AgeInterface {
         overFifteen(age);
     }
 
-    public Person() throws NoSuchFieldException {
+    public Person() {
         this(NameInterface.INIT_NAME, AgeInterface.INIT_AGE);
     }
 }
