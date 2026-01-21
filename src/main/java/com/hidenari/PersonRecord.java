@@ -3,7 +3,9 @@ package com.hidenari;
 import java.lang.reflect.Field;
 
 public record PersonRecord(
-        @ValidateNameLength(min = 1, max = 16) String name, int age)
+        @ValidateNameLength(min = 1, max = 16)
+        String name,
+        int age)
         implements NameInterface, AgeInterface {
 
     public PersonRecord(String name, int age) {
