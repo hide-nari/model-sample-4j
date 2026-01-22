@@ -23,6 +23,7 @@ Person Record Model (implicit) with sealed IF
 - private final int age
 - public String name()
 - public int age()
+- public GradeEnum grade()
 
 Grade Enum
 - GOLD
