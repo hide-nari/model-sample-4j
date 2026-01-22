@@ -5,7 +5,7 @@ enum GradeEnum {
     SILVER,
     BRONZE;
 
-    public GradeEnum upGrade(GradeEnum grade) {
+    GradeEnum upGrade(GradeEnum grade) {
         return switch (grade) {
             case BRONZE -> SILVER;
             case SILVER -> GOLD;
@@ -13,7 +13,7 @@ enum GradeEnum {
         };
     }
 
-    public GradeEnum downGrade(GradeEnum grade) {
+    GradeEnum downGrade(GradeEnum grade) {
         return switch (grade) {
             case GOLD -> SILVER;
             case SILVER -> BRONZE;
