@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PersonTest {
     @Test
-    public void personModelTest() throws NoSuchFieldException {
+    public void personModelTest() {
         var personOne = new Person();
         assertEquals("Mr.Taro", personOne.name);
         assertNotEquals("taro", personOne.name);
@@ -33,7 +33,7 @@ class PersonTest {
     }
 
     @Test
-    public void personModelEnumFunctionTest() throws NoSuchFieldException {
+    public void personModelEnumFunctionTest() {
         var person = new Person();
         person.grade = person.grade.upGrade(person.grade);
         assertEquals(GradeEnum.SILVER, person.grade);
@@ -47,7 +47,7 @@ class PersonTest {
     }
 
     @Test
-    public void personModelWithParameterTest() throws NoSuchFieldException {
+    public void personModelWithParameterTest() {
         var personTwo = new Person("jiro", 20, GradeEnum.BRONZE);
         assertEquals("Mr.Jiro", personTwo.name);
         assertNotEquals("jiro", personTwo.name);
@@ -77,21 +77,24 @@ class PersonTest {
     @Test
     public void personModelValidateUnderFifteenTest() {
         var exception = assertThrows(
-                IllegalArgumentException.class, () -> new Person("taro", 14, GradeEnum.BRONZE));
+                IllegalArgumentException.class,
+                () -> new Person("taro", 14, GradeEnum.BRONZE));
         assertEquals("under 15", exception.getMessage());
     }
 
     @Test
     public void personModelValidateNameMinLengthOverTest() {
         var exception = assertThrows(
-                IllegalArgumentException.class, () -> new Person("壱", 15, GradeEnum.BRONZE));
+                IllegalArgumentException.class,
+                () -> new Person("壱", 15, GradeEnum.BRONZE));
         assertEquals("name length is invalid", exception.getMessage());
     }
 
     @Test
     public void personModelValidateNameMaxLengthOverTest() {
         var exception = assertThrows(
-                IllegalArgumentException.class, () -> new Person("1234567890123456", 15, GradeEnum.BRONZE));
+                IllegalArgumentException.class,
+                () -> new Person("1234567890123456", 15, GradeEnum.BRONZE));
         assertEquals("name length is invalid", exception.getMessage());
     }
 }

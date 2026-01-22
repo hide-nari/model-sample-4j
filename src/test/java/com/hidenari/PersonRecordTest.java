@@ -26,21 +26,24 @@ class PersonRecordTest {
     @Test
     public void personModelValidateUnderFifteenTest() {
         var exception = assertThrows(
-                IllegalArgumentException.class, () -> new PersonRecord("taro", 14, GradeEnum.BRONZE));
+                IllegalArgumentException.class,
+                () -> new PersonRecord("taro", 14, GradeEnum.BRONZE));
         assertEquals("under 15", exception.getMessage());
     }
 
     @Test
     public void personModelValidateNameMinLengthOverTest() {
         var exception = assertThrows(
-                IllegalArgumentException.class, () -> new PersonRecord("壱", 15, GradeEnum.BRONZE));
+                IllegalArgumentException.class,
+                () -> new PersonRecord("壱", 15, GradeEnum.BRONZE));
         assertEquals("name length is invalid", exception.getMessage());
     }
 
     @Test
     public void personModelValidateNameMaxLengthOverTest() {
         var exception = assertThrows(
-                IllegalArgumentException.class, () -> new PersonRecord("1234567890123456", 15, GradeEnum.BRONZE));
+                IllegalArgumentException.class,
+                () -> new PersonRecord("1234567890123456", 15, GradeEnum.BRONZE));
         assertEquals("name length is invalid", exception.getMessage());
     }
 }
