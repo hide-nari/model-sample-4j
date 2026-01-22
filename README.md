@@ -21,6 +21,7 @@ Person Capsule Model with sealed IF
 Person Record Model (implicit) with sealed IF
 - private final String name
 - private final int age
+- private final GradeEnum grade
 - public String name()
 - public int age()
 - public GradeEnum grade()
