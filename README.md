@@ -35,7 +35,7 @@ Grade Enum
 
 ## Bind Checker
 - Name length is 2 to 15 characters.
-- Age is over 15.
+- Age is greater than equal 15.
 - Grade in [ GOLD, SILVER, BRONZE ] not other value.
 
 ## Update Rules
