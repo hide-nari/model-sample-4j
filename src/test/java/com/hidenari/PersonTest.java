@@ -33,6 +33,20 @@ class PersonTest {
     }
 
     @Test
+    public void personModelEnumFunctionTest() throws NoSuchFieldException {
+        var person = new Person();
+        person.grade = person.grade.upGrade(person.grade);
+        assertEquals(GradeEnum.SILVER, person.grade);
+        person.grade = person.grade.upGrade(person.grade);
+        assertEquals(GradeEnum.GOLD, person.grade);
+
+        person.grade = person.grade.downGrade(person.grade);
+        assertEquals(GradeEnum.SILVER, person.grade);
+        person.grade = person.grade.downGrade(person.grade);
+        assertEquals(GradeEnum.BRONZE, person.grade);
+    }
+
+    @Test
     public void personModelWithParameterTest() throws NoSuchFieldException {
         var personTwo = new Person("jiro", 20, GradeEnum.BRONZE);
         assertEquals("Mr.Jiro", personTwo.name);
