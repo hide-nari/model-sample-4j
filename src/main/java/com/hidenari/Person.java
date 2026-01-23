@@ -12,7 +12,7 @@ public final class Person implements NameInterface, AgeInterface {
                 + name.substring(1).toLowerCase();
         this.age = age;
         this.grade = grade;
-        validateNameLength(name);
+        validateNameLengthCheck(name);
         overFifteen(age);
     }
 

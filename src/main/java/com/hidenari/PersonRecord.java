@@ -13,7 +13,7 @@ public record PersonRecord(
                 + name.substring(1).toLowerCase();
         this.age = age;
         this.grade = grade;
-        validateNameLength(name);
+        validateNameLengthCheck(name);
         overFifteen(age);
     }
 

@@ -11,7 +11,7 @@ public final class PersonCapsule implements NameCapsuleInterface, AgeCapsuleInte
                 + name.substring(1).toLowerCase();
         this.age = age;
         this.grade = grade;
-        validateNameLength(name);
+        validateNameLengthCheck(name);
         overFifteen(age);
     }
 

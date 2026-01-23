@@ -5,7 +5,7 @@ import java.lang.reflect.Field;
 sealed interface NameInterface permits Person, PersonRecord {
     String INIT_NAME = "taro";
 
-    default void validateNameLength(String name) {
+    default void validateNameLengthCheck(String name) {
         try {
             Field nameField = Person.class.getField("name");
             ValidateNameLength param = nameField.getAnnotationsByType(ValidateNameLength.class)[0];

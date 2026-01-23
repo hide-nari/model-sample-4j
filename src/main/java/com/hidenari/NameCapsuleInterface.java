@@ -9,7 +9,7 @@ sealed interface NameCapsuleInterface permits PersonCapsule {
 
     void setName(String name);
 
-    default void validateNameLength(String name) {
+    default void validateNameLengthCheck(String name) {
         try {
             Method nameSetMethod = PersonCapsule.class.getMethod("getName");
             ValidateNameLength param = nameSetMethod.getAnnotationsByType(ValidateNameLength.class)[0];
