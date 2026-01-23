@@ -1,4 +1,4 @@
-package com.hidenari.Enum;
+package com.hidenari;
 
 public enum GradeEnum {
     GOLD,

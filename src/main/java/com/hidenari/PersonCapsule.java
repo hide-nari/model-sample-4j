@@ -1,7 +1,5 @@
 package com.hidenari;
 
-import com.hidenari.Enum.GradeEnum;
-
 public final class PersonCapsule implements NameCapsuleInterface, AgeCapsuleInterface {
     private String name;
     private int age;

@@ -1,6 +1,5 @@
 package com.hidenari;
 
-import com.hidenari.Enum.GradeEnum;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
