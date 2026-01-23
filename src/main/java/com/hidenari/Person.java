@@ -1,5 +1,7 @@
 package com.hidenari;
 
+import com.hidenari.Enum.GradeEnum;
+
 public final class Person implements NameInterface, AgeInterface {
     @ValidateNameLength(min = 1, max = 16)
     public String name;

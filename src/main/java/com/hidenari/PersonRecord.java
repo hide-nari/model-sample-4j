@@ -1,5 +1,7 @@
 package com.hidenari;
 
+import com.hidenari.Enum.GradeEnum;
+
 public record PersonRecord(
         @ValidateNameLength(min = 1, max = 16)
         String name,

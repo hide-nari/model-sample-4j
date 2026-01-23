@@ -1,5 +1,7 @@
 package com.hidenari;
 
+import com.hidenari.Enum.GradeEnum;
+
 public class Main {
     static void main() throws NoSuchFieldException {
         var person = new Person("taro", 15, GradeEnum.BRONZE);

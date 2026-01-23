@@ -1,11 +1,11 @@
-package com.hidenari;
+package com.hidenari.Enum;
 
-enum GradeEnum {
+public enum GradeEnum {
     GOLD,
     SILVER,
     BRONZE;
 
-    GradeEnum upGrade(GradeEnum grade) {
+    public GradeEnum upGrade(GradeEnum grade) {
         return switch (grade) {
             case BRONZE -> SILVER;
             case SILVER -> GOLD;
@@ -13,7 +13,7 @@ enum GradeEnum {
         };
     }
 
-    GradeEnum downGrade(GradeEnum grade) {
+    public GradeEnum downGrade(GradeEnum grade) {
         return switch (grade) {
             case GOLD -> SILVER;
             case SILVER -> BRONZE;
