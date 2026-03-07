@@ -1,18 +1,23 @@
 package com.hidenari;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Person Model Test")
+@DisplayName("Person Model Root")
 class PersonTest {
+    private Person person;
 
     @Nested
     @DisplayName("Person Model Group")
     class PersonModelTest {
-        private final Person person = new Person();
+        @BeforeEach
+        void setUp() {
+            person = new Person();
+        }
 
         @Test
         @DisplayName("Person Model")
@@ -59,7 +64,11 @@ class PersonTest {
     @Nested
     @DisplayName("Person Model With Parameter Group")
     class PersonModelWithParamTest {
-        private final Person person = new Person("jiro", 20, GradeEnum.BRONZE);
+
+        @BeforeEach
+        void setUp() {
+            person = new Person("jiro", 20, GradeEnum.BRONZE);
+        }
 
         @Test
         @DisplayName("Person Model With Parameter")
@@ -103,7 +112,7 @@ class PersonTest {
         }
 
         @Test
-        @DisplayName("Person Model Validate Name Min Length Over")
+        @DisplayName("Person Model Validate Name Min Length Less")
         void personModelValidateNameMinLengthOverTest() {
             var exception = assertThrows(
                     IllegalArgumentException.class,
