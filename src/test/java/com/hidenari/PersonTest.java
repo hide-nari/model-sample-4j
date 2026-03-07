@@ -7,38 +7,39 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Person Model Test")
 class PersonTest {
+    private final Person person = new Person();
+    private final Person personWithParam = new Person("jiro", 20, GradeEnum.BRONZE);
+
     @Test
     @DisplayName("Person Model")
     void personModelTest() {
-        var personOne = new Person();
-        assertEquals("Mr.Taro", personOne.name);
-        assertNotEquals("taro", personOne.name);
-        assertNotEquals("Taro", personOne.name);
-        assertEquals(15, personOne.age);
-        assertEquals(GradeEnum.BRONZE, personOne.grade);
+        assertEquals("Mr.Taro", person.name);
+        assertNotEquals("taro", person.name);
+        assertNotEquals("Taro", person.name);
+        assertEquals(15, person.age);
+        assertEquals(GradeEnum.BRONZE, person.grade);
 
-        personOne.name = "jiro";
-        assertEquals("jiro", personOne.name);
-        assertNotEquals("taro", personOne.name);
+        person.name = "jiro";
+        assertEquals("jiro", person.name);
+        assertNotEquals("taro", person.name);
 
-        personOne.age = 20;
-        assertEquals(20, personOne.age);
-        assertNotEquals(15, personOne.age);
+        person.age = 20;
+        assertEquals(20, person.age);
+        assertNotEquals(15, person.age);
 
-        personOne.grade = GradeEnum.SILVER;
-        assertEquals(GradeEnum.SILVER, personOne.grade);
-        assertNotEquals(GradeEnum.BRONZE, personOne.grade);
+        person.grade = GradeEnum.SILVER;
+        assertEquals(GradeEnum.SILVER, person.grade);
+        assertNotEquals(GradeEnum.BRONZE, person.grade);
 
-        personOne.grade = GradeEnum.GOLD;
-        assertEquals(GradeEnum.GOLD, personOne.grade);
-        assertNotEquals(GradeEnum.BRONZE, personOne.grade);
-        assertNotEquals(GradeEnum.SILVER, personOne.grade);
+        person.grade = GradeEnum.GOLD;
+        assertEquals(GradeEnum.GOLD, person.grade);
+        assertNotEquals(GradeEnum.BRONZE, person.grade);
+        assertNotEquals(GradeEnum.SILVER, person.grade);
     }
 
     @Test
     @DisplayName("Person Model Enum Function")
     void personModelEnumFunctionTest() {
-        var person = new Person();
         person.grade = person.grade.upGrade(person.grade);
         assertEquals(GradeEnum.SILVER, person.grade);
         person.grade = person.grade.upGrade(person.grade);
@@ -53,30 +54,29 @@ class PersonTest {
     @Test
     @DisplayName("Person Model With Parameter")
     void personModelWithParameterTest() {
-        var personTwo = new Person("jiro", 20, GradeEnum.BRONZE);
-        assertEquals("Mr.Jiro", personTwo.name);
-        assertNotEquals("jiro", personTwo.name);
-        assertNotEquals("Jiro", personTwo.name);
-        assertEquals(20, personTwo.age);
-        assertNotEquals(15, personTwo.age);
-        assertEquals(GradeEnum.BRONZE, personTwo.grade);
+        assertEquals("Mr.Jiro", personWithParam.name);
+        assertNotEquals("jiro", personWithParam.name);
+        assertNotEquals("Jiro", personWithParam.name);
+        assertEquals(20, personWithParam.age);
+        assertNotEquals(15, personWithParam.age);
+        assertEquals(GradeEnum.BRONZE, personWithParam.grade);
 
-        personTwo.name = "saburo";
-        assertEquals("saburo", personTwo.name);
-        assertNotEquals("jiro", personTwo.name);
+        personWithParam.name = "saburo";
+        assertEquals("saburo", personWithParam.name);
+        assertNotEquals("jiro", personWithParam.name);
 
-        personTwo.age = 25;
-        assertEquals(25, personTwo.age);
-        assertNotEquals(20, personTwo.age);
+        personWithParam.age = 25;
+        assertEquals(25, personWithParam.age);
+        assertNotEquals(20, personWithParam.age);
 
-        personTwo.grade = GradeEnum.SILVER;
-        assertEquals(GradeEnum.SILVER, personTwo.grade);
-        assertNotEquals(GradeEnum.BRONZE, personTwo.grade);
+        personWithParam.grade = GradeEnum.SILVER;
+        assertEquals(GradeEnum.SILVER, personWithParam.grade);
+        assertNotEquals(GradeEnum.BRONZE, personWithParam.grade);
 
-        personTwo.grade = GradeEnum.GOLD;
-        assertEquals(GradeEnum.GOLD, personTwo.grade);
-        assertNotEquals(GradeEnum.BRONZE, personTwo.grade);
-        assertNotEquals(GradeEnum.SILVER, personTwo.grade);
+        personWithParam.grade = GradeEnum.GOLD;
+        assertEquals(GradeEnum.GOLD, personWithParam.grade);
+        assertNotEquals(GradeEnum.BRONZE, personWithParam.grade);
+        assertNotEquals(GradeEnum.SILVER, personWithParam.grade);
     }
 
     @Test
