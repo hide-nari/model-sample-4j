@@ -1,12 +1,15 @@
 package com.hidenari;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("Person Model Test")
 class PersonTest {
     @Test
-    public void personModelTest() {
+    @DisplayName("Person Model")
+    void personModelTest() {
         var personOne = new Person();
         assertEquals("Mr.Taro", personOne.name);
         assertNotEquals("taro", personOne.name);
@@ -33,7 +36,8 @@ class PersonTest {
     }
 
     @Test
-    public void personModelEnumFunctionTest() {
+    @DisplayName("Person Model Enum Function")
+    void personModelEnumFunctionTest() {
         var person = new Person();
         person.grade = person.grade.upGrade(person.grade);
         assertEquals(GradeEnum.SILVER, person.grade);
@@ -47,7 +51,8 @@ class PersonTest {
     }
 
     @Test
-    public void personModelWithParameterTest() {
+    @DisplayName("Person Model With Parameter")
+    void personModelWithParameterTest() {
         var personTwo = new Person("jiro", 20, GradeEnum.BRONZE);
         assertEquals("Mr.Jiro", personTwo.name);
         assertNotEquals("jiro", personTwo.name);
@@ -75,7 +80,8 @@ class PersonTest {
     }
 
     @Test
-    public void personModelValidateUnderFifteenTest() {
+    @DisplayName("Person Model Validate Under Fifteen")
+    void personModelValidateUnderFifteenTest() {
         var exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> new Person("taro", 14, GradeEnum.BRONZE));
@@ -83,7 +89,8 @@ class PersonTest {
     }
 
     @Test
-    public void personModelValidateNameMinLengthOverTest() {
+    @DisplayName("Person Model Validate Name Min Length Over")
+    void personModelValidateNameMinLengthOverTest() {
         var exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> new Person("壱", 15, GradeEnum.BRONZE));
@@ -91,7 +98,8 @@ class PersonTest {
     }
 
     @Test
-    public void personModelValidateNameMaxLengthOverTest() {
+    @DisplayName("Person Model Validate Name Max Length Over")
+    void personModelValidateNameMaxLengthOverTest() {
         var exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> new Person("1234567890123456", 15, GradeEnum.BRONZE));

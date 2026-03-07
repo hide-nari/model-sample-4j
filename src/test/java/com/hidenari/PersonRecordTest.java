@@ -1,12 +1,15 @@
 package com.hidenari;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("Person Record Model Test")
 class PersonRecordTest {
     @Test
-    public void personRecordModelTest() {
+    @DisplayName("Person Record Model")
+    void personRecordModelTest() {
         var personOne = new PersonRecord();
         assertEquals("Mr.Taro", personOne.name());
         assertNotEquals("taro", personOne.name());
@@ -24,7 +27,8 @@ class PersonRecordTest {
     }
 
     @Test
-    public void personModelValidateUnderFifteenTest() {
+    @DisplayName("Person Record Model Validate Under Fifteen")
+    void personModelValidateUnderFifteenTest() {
         var exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> new PersonRecord("taro", 14, GradeEnum.BRONZE));
@@ -32,7 +36,8 @@ class PersonRecordTest {
     }
 
     @Test
-    public void personModelValidateNameMinLengthOverTest() {
+    @DisplayName("Person Record Model Validate Name Min Length Over")
+    void personModelValidateNameMinLengthOverTest() {
         var exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> new PersonRecord("壱", 15, GradeEnum.BRONZE));
@@ -40,7 +45,8 @@ class PersonRecordTest {
     }
 
     @Test
-    public void personModelValidateNameMaxLengthOverTest() {
+    @DisplayName("Person Record Model Validate Name Max Length Over")
+    void personModelValidateNameMaxLengthOverTest() {
         var exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> new PersonRecord("1234567890123456", 15, GradeEnum.BRONZE));

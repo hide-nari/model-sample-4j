@@ -1,12 +1,15 @@
 package com.hidenari;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("Person Capsule Model Test")
 class PersonCapsuleTest {
     @Test
-    public void personCapsuleModelTest() {
+    @DisplayName("Person Capsule Model")
+    void personCapsuleModelTest() {
         var person = new PersonCapsule();
         assertEquals("Mr.Taro", person.getName());
         assertNotEquals("Mr.taro", person.getName());
@@ -32,7 +35,8 @@ class PersonCapsuleTest {
     }
 
     @Test
-    public void personCapsuleModelEnumFunctionTest() {
+    @DisplayName("Person Capsule Model Enum Function")
+    void personCapsuleModelEnumFunctionTest() {
         var person = new PersonCapsule();
         person.setGrade(person.getGrade().upGrade(person.getGrade()));
         assertEquals(GradeEnum.SILVER, person.getGrade());
@@ -46,7 +50,8 @@ class PersonCapsuleTest {
     }
 
     @Test
-    public void personCapsuleModelWithParameterTest() {
+    @DisplayName("Person Capsule Model With Parameter")
+    void personCapsuleModelWithParameterTest() {
         var personTwo = new PersonCapsule("jiro", 20, GradeEnum.BRONZE);
         assertEquals("Mr.Jiro", personTwo.getName());
         assertNotEquals("jiro", personTwo.getName());
@@ -74,7 +79,8 @@ class PersonCapsuleTest {
     }
 
     @Test
-    public void personModelValidateUnderFifteenTest() {
+    @DisplayName("Person Capsule Model Validate Under Fifteen")
+    void personModelValidateUnderFifteenTest() {
         var exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> new PersonCapsule("taro", 14, GradeEnum.BRONZE));
@@ -82,7 +88,8 @@ class PersonCapsuleTest {
     }
 
     @Test
-    public void personModelValidateNameMinLengthOverTest() {
+    @DisplayName("Person Capsule Model Validate Name Min Length Over")
+    void personModelValidateNameMinLengthOverTest() {
         var exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> new PersonCapsule("壱", 15, GradeEnum.BRONZE));
@@ -90,7 +97,8 @@ class PersonCapsuleTest {
     }
 
     @Test
-    public void personModelValidateNameMaxLengthOverTest() {
+    @DisplayName("Person Capsule Model Validate Name Max Length Over")
+    void personModelValidateNameMaxLengthOverTest() {
         var exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> new PersonCapsule("1234567890123456", 15, GradeEnum.BRONZE));
