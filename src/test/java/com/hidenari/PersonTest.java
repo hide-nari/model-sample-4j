@@ -7,12 +7,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Person Model Root")
+@DisplayName("Person model root")
 class PersonTest {
     private Person person;
 
     @Nested
-    @DisplayName("Person Model Group")
+    @DisplayName("Person model group")
     class PersonModelTest {
         @BeforeEach
         void setUp() {
@@ -20,21 +20,31 @@ class PersonTest {
         }
 
         @Test
-        @DisplayName("Person Model")
-        void personModelTest() {
+        @DisplayName("Person model name")
+        void personModelNameTest() {
             assertEquals("Mr.Taro", person.name);
             assertNotEquals("taro", person.name);
             assertNotEquals("Taro", person.name);
-            assertEquals(15, person.age);
-            assertEquals(GradeEnum.BRONZE, person.grade);
 
             person.name = "jiro";
             assertEquals("jiro", person.name);
             assertNotEquals("taro", person.name);
+        }
+
+        @Test
+        @DisplayName("Person model age")
+        void personModelAgeTest() {
+            assertEquals(15, person.age);
 
             person.age = 20;
             assertEquals(20, person.age);
             assertNotEquals(15, person.age);
+        }
+
+        @Test
+        @DisplayName("Person model grade")
+        void personModelGradeTest() {
+            assertEquals(GradeEnum.BRONZE, person.grade);
 
             person.grade = GradeEnum.SILVER;
             assertEquals(GradeEnum.SILVER, person.grade);
@@ -47,8 +57,8 @@ class PersonTest {
         }
 
         @Test
-        @DisplayName("Person Model Enum Function")
-        void personModelEnumFunctionTest() {
+        @DisplayName("Person model grade function")
+        void personModelUpGradeFunctionTest() {
             person.grade = person.grade.upGrade(person.grade);
             assertEquals(GradeEnum.SILVER, person.grade);
             person.grade = person.grade.upGrade(person.grade);
@@ -62,7 +72,7 @@ class PersonTest {
     }
 
     @Nested
-    @DisplayName("Person Model With Parameter Group")
+    @DisplayName("Person model with parameter group")
     class PersonModelWithParamTest {
 
         @BeforeEach
@@ -71,22 +81,32 @@ class PersonTest {
         }
 
         @Test
-        @DisplayName("Person Model With Parameter")
-        void personModelWithParameterTest() {
+        @DisplayName("Person model with parameter name")
+        void personModelWithParameterNameTest() {
             assertEquals("Mr.Jiro", person.name);
             assertNotEquals("jiro", person.name);
             assertNotEquals("Jiro", person.name);
-            assertEquals(20, person.age);
-            assertNotEquals(15, person.age);
-            assertEquals(GradeEnum.BRONZE, person.grade);
 
             person.name = "saburo";
             assertEquals("saburo", person.name);
             assertNotEquals("jiro", person.name);
+        }
+
+        @Test
+        @DisplayName("Person model with parameter age")
+        void personModelWithParameterAgeTest() {
+            assertEquals(20, person.age);
+            assertNotEquals(15, person.age);
 
             person.age = 25;
             assertEquals(25, person.age);
             assertNotEquals(20, person.age);
+        }
+
+        @Test
+        @DisplayName("Person model with parameter grade")
+        void personModelWithParameterGradeTest() {
+            assertEquals(GradeEnum.BRONZE, person.grade);
 
             person.grade = GradeEnum.SILVER;
             assertEquals(GradeEnum.SILVER, person.grade);
@@ -100,10 +120,10 @@ class PersonTest {
     }
 
     @Nested
-    @DisplayName("Person Model Error Group")
+    @DisplayName("Person model error group")
     class PersonModelErrorTest {
         @Test
-        @DisplayName("Person Model Validate Under Fifteen")
+        @DisplayName("Person model validate under fifteen")
         void personModelValidateUnderFifteenTest() {
             var exception = assertThrows(
                     IllegalArgumentException.class,
@@ -112,7 +132,7 @@ class PersonTest {
         }
 
         @Test
-        @DisplayName("Person Model Validate Name Min Length Less")
+        @DisplayName("Person model validate name min length")
         void personModelValidateNameMinLengthOverTest() {
             var exception = assertThrows(
                     IllegalArgumentException.class,
@@ -121,7 +141,7 @@ class PersonTest {
         }
 
         @Test
-        @DisplayName("Person Model Validate Name Max Length Over")
+        @DisplayName("Person model validate name max length")
         void personModelValidateNameMaxLengthOverTest() {
             var exception = assertThrows(
                     IllegalArgumentException.class,
