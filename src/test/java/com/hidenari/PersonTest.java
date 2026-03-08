@@ -133,7 +133,7 @@ class PersonTest {
 
         @Test
         @DisplayName("Person model validate name min length")
-        void personModelValidateNameMinLengthOverTest() {
+        void personModelValidateNameMinLengthTest() {
             var exception = assertThrows(
                     IllegalArgumentException.class,
                     () -> new Person("壱", 15, GradeEnum.BRONZE));
@@ -142,7 +142,7 @@ class PersonTest {
 
         @Test
         @DisplayName("Person model validate name max length")
-        void personModelValidateNameMaxLengthOverTest() {
+        void personModelValidateNameMaxLengthTest() {
             var exception = assertThrows(
                     IllegalArgumentException.class,
                     () -> new Person("1234567890123456", 15, GradeEnum.BRONZE));
